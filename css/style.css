@@ -115,9 +115,9 @@ p {
 .top-violet {
     grid-area: top-violet;
     background-color: var(--moderate-violet);
-    background-image: url(./images/bg-pattern-quotation.svg);
+    background-image: url(../images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    background-position: 40% 10%;
+    background-position: 40% 15%;
     background-attachment: fixed;
 
 }
@@ -177,6 +177,6 @@ p {
     }
 
     .top-violet {
-        background-position: 85% 10%;
+        background-position: 85% 15%;
     }
 }
