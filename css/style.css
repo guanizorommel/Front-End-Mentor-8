@@ -1,0 +1,73 @@
+/*
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+*/
+
+:root {
+    --moderate-violet:hsl(263, 55%, 52%);
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+    min-height: 100vh;
+}
+
+/*Grid Layout*/
+.grid-container {
+    padding: 100px 3%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+
+    grid-template-areas: 
+        "top-violet top-violet top-gray right-sidebar"
+        "bottom-white bottom-black bottom-black right-sidebar"
+}
+
+.top-violet {
+    grid-area: top-violet;
+    background-color: var(--moderate-violet);
+}
+
+.top-gray {
+    grid-area: top-gray;
+    background-color: var(--dark-grayish-blue);
+}
+
+.right-sidebar {
+    grid-area: right-sidebar;
+    background-color: var(--white);
+}
+
+.bottom-white {
+    grid-area: bottom-white;
+    background-color: var(--white);
+}
+
+.bottom-black {
+    grid-area: bottom-black;
+    background-color: var(--dark-blackish-blue);
+}
+
+/*Grid Cosmetics*/
+.top-violet, .top-gray, .right-sidebar, .bottom-white, .bottom-black {
+    border-radius: 10px;
+    padding: 40px;
+}
