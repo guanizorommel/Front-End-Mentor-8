@@ -23,9 +23,80 @@ Note for text colors:
 body {
     background-color: var(--light-grayish-blue);
     min-height: 100vh;
+    font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-/*Grid Layout*/
+/*User Profile CSS*/
+.profile {
+    display: flex;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.profile-picture-violet img {
+    border: 3px solid hsl(0, 0%, 81%, 0.5);
+    border-radius: 100px;
+    
+}
+.profile-name-white {
+    color: var(--light-gray);
+    font-size: 15px;
+}
+
+.verified-graduate-white {
+    color: var(--light-gray);
+    font-size: 15px;
+    opacity: 50%;
+}
+
+.profile-name-darkgray {
+    color: var(--dark-grayish-blue);
+    font-size: 15px;
+}
+
+.verified-graduate-darkgray {
+    color:var(--dark-grayish-blue);
+    font-size: 15px;
+    opacity: 50%;
+}
+
+/*testimonial heading*/
+.testimonial-title-white {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 20px 0px;
+}
+
+.testimonial-title-gray {
+    color: var(--dark-grayish-blue);
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 20px 0px
+}
+/*testimonial text*/
+p {
+    color: var(--white);
+    opacity: 50%;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.testimonial-text-gray {
+    color: var(--dark-grayish-blue);
+    opacity: 80%;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/*Grid Layout and Boxes*/
 .grid-container {
     padding: 100px 3%;
     max-width: 1400px;
@@ -44,6 +115,11 @@ body {
 .top-violet {
     grid-area: top-violet;
     background-color: var(--moderate-violet);
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 40% 10%;
+    background-attachment: fixed;
+
 }
 
 .top-gray {
@@ -66,8 +142,41 @@ body {
     background-color: var(--dark-blackish-blue);
 }
 
-/*Grid Cosmetics*/
+/*Grid Boxes Cosmetics*/
 .top-violet, .top-gray, .right-sidebar, .bottom-white, .bottom-black {
-    border-radius: 10px;
-    padding: 40px;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 10px 10px 20px 0px hsla(0, 0%, 0%, 0.1);
+}
+
+/*Media Queries*/
+
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-rows: 1fr auto 1fr;
+
+        grid-template-areas:
+        "top-violet top-violet top-gray top-gray"
+        "bottom-white bottom-white bottom-white bottom-white"
+        "bottom-black bottom-black right-sidebar right-sidebar"
+    }
+
+}
+
+@media (max-width: 650px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        grid-template-areas:
+        "top-violet"
+        "top-gray"
+        "bottom-white" 
+        "bottom-black" 
+        "right-sidebar" 
+    }
+
+    .top-violet {
+        background-position: 85% 10%;
+    }
 }
